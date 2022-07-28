@@ -146,14 +146,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211475041}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1357304476}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &771701271
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,14 +177,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771701271}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1017705796}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1017705792
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,13 +213,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017705792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7303edf5c549e5855618f7338d397a, type: 3}
+  m_Script: {fileID: 11500000, guid: 97b744e20f2b45643bed8d119c9de207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
-  thickness: 2
+  duration: 31
+  thickness: 3
   color: {r: 1, g: 0, b: 0, a: 1}
-  radius: 10
+  sides: 3
+  radius: 15
 --- !u!23 &1017705794
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -278,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 1017705792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 771701272}
   m_RootOrder: 0
@@ -312,12 +313,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edc6a474ae52dc4280d56940218061c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
   p1: {fileID: 1017705793}
   p2: {fileID: 1357304473}
   duration: 9999
-  colorTransparency: 0.1
-  speed: 10
+  color: {r: 0, g: 0, b: 0, a: 0.039215688}
+  time: 0
+  speed: 50
   step: 0.01
 --- !u!4 &1090046156
 Transform:
@@ -361,13 +362,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1357304472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7303edf5c549e5855618f7338d397a, type: 3}
+  m_Script: {fileID: 11500000, guid: 97b744e20f2b45643bed8d119c9de207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 20
+  duration: 21
   thickness: 2
-  color: {r: 0, g: 1, b: 0.076420784, a: 1}
-  radius: 10
+  color: {r: 0.21960784, g: 1, b: 0, a: 1}
+  sides: 3
+  radius: 30
 --- !u!23 &1357304474
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -426,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 1357304472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 211475042}
   m_RootOrder: 0

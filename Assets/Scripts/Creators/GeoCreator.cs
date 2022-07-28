@@ -1,20 +1,24 @@
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class GeoCreator : MonoBehaviour
+public abstract class GeoCreator : MonoBehaviour
 {
-    public GeoMove p1, p2;
-    public float duration = 9999;
-    public Color color = Color.green;
-    public float time;
-    public int speed = 1;
-    public float step = 0.1f;
+    [HideInInspector]
+    [SerializeField] public float time;
+
+    [SerializeField] public GeoMove p1, p2;
+    [SerializeField] public float duration = 9999;
+    [Range(0, 1)]
+    [SerializeField] public float colorTransparency = 0.1f;
+    [SerializeField] public int speed = 1;
+    [SerializeField] public float step = 0.1f;
 
     private float maxTime;
+    private Color color;
 
     private void Start()
     {
         maxTime = LCM(p1.duration, p2.duration);
+        color.a = colorTransparency;
     }
 
     private void Update()
@@ -22,7 +26,9 @@ public class GeoCreator : MonoBehaviour
         for (int i = 0; i < speed; i++)
         {
             if (time >= maxTime) return;
-            Debug.DrawLine(p1.transform.position, p2.transform.position, color, duration);
+
+            Draw(p1.transform.position, p2.transform.position, maxTime, color);
+
             p1.GUpdate(time % p1.duration);
             p2.GUpdate(time % p2.duration);
 
@@ -34,11 +40,17 @@ public class GeoCreator : MonoBehaviour
         }
     }
 
+    protected abstract void Draw(Vector3 p1, Vector3 p2, float maxTime, Color col);
+
     public static float LCM(float a, float b)
     {
         if (a * b <= 0)
-            throw new Exception("values should be greater than zero");
-        
+        {
+            Debug.LogWarning("values should be greater than zero");
+            return 0;
+        }
+
+
         // a is greater
         if (a < b)
         {
@@ -46,8 +58,8 @@ public class GeoCreator : MonoBehaviour
         }
 
         float A = a, B = b;
-        
-        while(A % B != 0)
+
+        while (A % B != 0)
         {
             B += b;
             if (A < B)
