@@ -1,5 +1,7 @@
 ﻿using System;
+
 using UnityEditor;
+
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -21,7 +23,7 @@ public class GeoCreatorEditor : Editor
 
         using (new EditorGUI.DisabledScope(true))
             EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Script"));
-        
+
         var p1 = serializedObject.FindProperty("p1");
         var p2 = serializedObject.FindProperty("p2");
         var time = serializedObject.FindProperty("time");
@@ -36,8 +38,11 @@ public class GeoCreatorEditor : Editor
         }
         if (p1.isExpanded)
         {
-            CreateCachedEditor(p1.objectReferenceValue, null, ref _p1Editor);
-            _p1Editor.OnInspectorGUI();
+            if (p1.objectReferenceValue != null)
+            {
+                CreateCachedEditor(p1.objectReferenceValue, null, ref _p1Editor);
+                _p1Editor.OnInspectorGUI();
+            }
         }
 
         using (new GUILayout.HorizontalScope())
@@ -47,14 +52,20 @@ public class GeoCreatorEditor : Editor
         }
         if (p2.isExpanded)
         {
-            CreateCachedEditor(p2.objectReferenceValue, null, ref _p2Editor);
-            _p2Editor.OnInspectorGUI();
+            if (p2.objectReferenceValue != null)
+            {
+                CreateCachedEditor(p2.objectReferenceValue, null, ref _p2Editor);
+                _p2Editor.OnInspectorGUI();
+            }
         }
 
-        EditorGUILayout.PropertyField(color);
-        time.floatValue = EditorGUILayout.Slider("T", time.floatValue, 0, GeoCreator.LCM(tar.p1.duration, tar.p2.duration));
-        EditorGUILayout.PropertyField(speed);
-        EditorGUILayout.PropertyField(step);
+        if (p1.objectReferenceValue != null && p2.objectReferenceValue != null)
+        {
+            EditorGUILayout.PropertyField(color);
+            time.floatValue = EditorGUILayout.Slider("T", time.floatValue, 0, GeoCreator.LCM(tar.p1.duration, tar.p2.duration));
+            EditorGUILayout.PropertyField(speed);
+            EditorGUILayout.PropertyField(step);
+        }
         serializedObject.ApplyModifiedProperties();
     }
 }

@@ -23,8 +23,8 @@ public class GeoCreator : MonoBehaviour
         {
             if (time >= maxTime) return;
             Debug.DrawLine(p1.transform.position, p2.transform.position, color, duration);
-            p1.GUpdate(time);
-            p2.GUpdate(time);
+            p1.GUpdate(time % p1.duration);
+            p2.GUpdate(time % p2.duration);
 
             time += step;
             if (time > maxTime) time = maxTime;
