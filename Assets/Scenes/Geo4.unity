@@ -216,11 +216,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b744e20f2b45643bed8d119c9de207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 11
+  duration: 31
   thickness: 3
   color: {r: 1, g: 0, b: 0, a: 1}
   sides: 3
-  radius: 30
+  radius: 15
 --- !u!23 &1017705794
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -316,10 +316,10 @@ MonoBehaviour:
   p1: {fileID: 1017705793}
   p2: {fileID: 1357304473}
   duration: 9999
-  color: {r: 0, g: 0, b: 0, a: 0.078431375}
+  color: {r: 0, g: 0, b: 0, a: 0.039215688}
   time: 0
-  speed: 10
-  step: 0.005
+  speed: 50
+  step: 0.01
 --- !u!4 &1090046156
 Transform:
   m_ObjectHideFlags: 0
@@ -365,11 +365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b744e20f2b45643bed8d119c9de207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 7
+  duration: 21
   thickness: 2
   color: {r: 0.21960784, g: 1, b: 0, a: 1}
   sides: 3
-  radius: 15
+  radius: 30
 --- !u!23 &1357304474
 MeshRenderer:
   m_ObjectHideFlags: 0
