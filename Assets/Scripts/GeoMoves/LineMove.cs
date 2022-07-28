@@ -21,6 +21,6 @@ public class LineMove : GeoMove
     {
         var t = time > duration / 2f ? duration - time : time;
         t /= duration / 2f;
-        transform.localPosition = Vector3.Lerp(origin + transform.forward * length / 2f, origin - transform.forward * length / 2f, t);
+        transform.localPosition = Vector3.Lerp(origin + Vector3.forward * length / 2f, origin - Vector3.forward * length / 2f, t);
     }
 }
