@@ -213,12 +213,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017705792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7303edf5c549e5855618f7338d397a, type: 3}
+  m_Script: {fileID: 11500000, guid: 97b744e20f2b45643bed8d119c9de207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  drawGizmos: 1
+  duration: 3
   thickness: 2
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sides: 10
   radius: 10
 --- !u!23 &1017705794
 MeshRenderer:
@@ -317,8 +319,8 @@ MonoBehaviour:
   p2: {fileID: 1357304473}
   duration: 9999
   colorTransparency: 0.1
-  speed: 10
-  step: 0.01
+  speed: 1
+  step: 0.002
 --- !u!4 &1090046156
 Transform:
   m_ObjectHideFlags: 0
@@ -361,12 +363,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1357304472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7303edf5c549e5855618f7338d397a, type: 3}
+  m_Script: {fileID: 11500000, guid: 97b744e20f2b45643bed8d119c9de207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 20
+  drawGizmos: 1
+  duration: 1
   thickness: 2
-  color: {r: 0, g: 1, b: 0.076420784, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sides: 5
   radius: 10
 --- !u!23 &1357304474
 MeshRenderer:

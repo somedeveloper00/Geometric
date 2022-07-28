@@ -10,7 +10,7 @@ public class LineMove : GeoMove
     
     Vector3 origin => transform.parent?.position ?? Vector3.zero;
 
-    private void OnDrawGizmos()
+    protected override void DrawGizmo()
     {
         Handles.color = color;
         Handles.DrawLine(origin + transform.forward * length / 2, origin - transform.forward * length / 2, thickness * 1.5f);

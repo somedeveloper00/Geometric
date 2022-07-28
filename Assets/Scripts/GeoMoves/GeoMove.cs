@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 public abstract class GeoMove : MonoBehaviour
 {
+    public bool drawGizmos = true;
     public float duration = 2;
     public float thickness = 2;
     public Color color;
@@ -15,6 +16,15 @@ public abstract class GeoMove : MonoBehaviour
             color = new Color(Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1), 1);
         transform.localPosition = Vector3.zero;
     }
+
+    private void OnDrawGizmos()
+    {
+        if (drawGizmos)
+        {
+            DrawGizmo();
+        }
+    }
+    protected abstract void DrawGizmo();
 
     [NonSerialized]
     private GUIStyle _labelStyle = null;

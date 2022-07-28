@@ -27,8 +27,10 @@ public abstract class GeoCreator : MonoBehaviour
         {
             if (time >= maxTime) return;
 
-            Draw(p1.transform.position, p2.transform.position, maxTime, color);
+            // draw with Creator
+            Draw(p1.transform.position, p2.transform.position, time / maxTime, color);
 
+            // move dots
             p1.GUpdate(time % p1.duration);
             p2.GUpdate(time % p2.duration);
 
@@ -40,7 +42,7 @@ public abstract class GeoCreator : MonoBehaviour
         }
     }
 
-    protected abstract void Draw(Vector3 p1, Vector3 p2, float maxTime, Color col);
+    protected abstract void Draw(Vector3 p1, Vector3 p2, float t, Color col);
 
     public static float LCM(float a, float b)
     {

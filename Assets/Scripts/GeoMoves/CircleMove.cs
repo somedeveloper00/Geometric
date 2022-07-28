@@ -5,7 +5,7 @@ public class CircleMove : GeoMove
 {
     public float radius = 1;
 
-    private void OnDrawGizmos()
+    protected override void DrawGizmo()
     {
         var origin = transform.parent?.position ?? Vector3.zero;
         

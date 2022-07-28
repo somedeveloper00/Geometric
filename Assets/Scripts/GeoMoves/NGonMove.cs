@@ -19,7 +19,7 @@ public class NGonMove : GeoMove
     private void Start() => UpdatePoints();
 
 
-    private void OnDrawGizmos()
+    protected override void DrawGizmo()
     {
         if(!Application.isPlaying)
             UpdatePoints();
